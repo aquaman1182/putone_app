@@ -51,6 +51,6 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
-    - assets/music/
+    #- assets/music/
 
   uses-material-design: true
