@@ -24,7 +24,7 @@ class UserCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 186,
-      height: 302,
+      height: 306,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: Colors.white,
@@ -51,7 +51,7 @@ class UserCard extends StatelessWidget {
                   size: 28,
                   imagePath: user.imagePath,
                 ),
-                SizedBox(width: 6),
+                SizedBox(width: 12),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
@@ -72,7 +72,7 @@ class UserCard extends StatelessWidget {
             ),
           ),
           Divider(
-            color: AppColorTheme.dark().gray100,
+            color: AppColorTheme.dark().gray200,
             height: 0.2,
           ),
           //テーマソング情報のウィジェット
@@ -88,7 +88,7 @@ class UserCard extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(width: 6),
+                SizedBox(width: 12),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -108,7 +108,7 @@ class UserCard extends StatelessWidget {
             ),
           ),
           Divider(
-            color: AppColorTheme.dark().gray100,
+            color: AppColorTheme.dark().gray200,
             height: 0.2,
           ),
           //共通アーティストの表示
@@ -124,7 +124,7 @@ class UserCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: 12),
                 //共通アーティストの丸作成
                 CommonArtists(
                   artists: artists,

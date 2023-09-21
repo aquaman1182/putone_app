@@ -10,7 +10,7 @@ class CommunityUserList extends StatelessWidget {
       itemCount: communityDummyUserList.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, //←横に表示するグリッド数
-        childAspectRatio: 186 / 302, //←グリッドの横縦比率
+        childAspectRatio: 186 / 306, //←グリッドの横縦比率
         crossAxisSpacing: 12, //←グリッド間の横スペース
         mainAxisSpacing: 12, //←グリッド間の縦スペース
       ),
