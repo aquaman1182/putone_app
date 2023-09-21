@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:putone/components/community_user_list.dart';
+import 'package:putone/presentation/pages/main/community/community_select_screen.dart';
 import 'package:putone/theme/app_color_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -132,50 +133,95 @@ class _CommunityScreenState extends State<CommunityScreen> {
                         context: context,
                         builder: (context) {
                           return Container(
-                            height: 200,
+                            height: 230,
                             decoration: BoxDecoration(color: Colors.white),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 12, vertical: 16),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('所属中のコミュニティ'),
-                                  SizedBox(height: 8),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text('東京理科大学'),
-                                      Icon(
-                                        Icons.check,
-                                        color: AppColorTheme.dark().mainColor,
-                                        size: 24,
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(height: 8),
-                                  Text('東京理科大学 経営学部'),
-                                  SizedBox(height: 8),
-                                  Text('理科大 バドミントンサークル'),
-                                  SizedBox(height: 16),
-                                  Divider(
-                                    color: AppColorTheme.dark().gray300,
-                                    height: 0.2,
-                                  ),
-                                  SizedBox(height: 16),
-                                  InkWell(
-                                    onTap: () {},
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(16, 18, 16, 0),
+                                  child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Text(
+                                          '所属中のコミュニティ',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: AppColorTheme.dark().gray200,
+                                          ),
+                                        ),
+                                        SizedBox(height: 12),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              '東京理科大学',
+                                              style: TextStyle(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            Icon(
+                                              Icons.check,
+                                              color: AppColorTheme.dark()
+                                                  .mainColor,
+                                              size: 24,
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 12),
+                                        Text(
+                                          '東京理科大学 経営学部',
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        SizedBox(height: 12),
+                                        Text(
+                                          '理科大 バドミントンサークル',
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ]),
+                                ),
+                                SizedBox(height: 20),
+                                Divider(
+                                  color: AppColorTheme.dark().gray200,
+                                  height: 0.2,
+                                ),
+                                SizedBox(height: 16),
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.of(context).pop();
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                CommunitySelectScreen()));
+                                  },
+                                  child: Container(
+                                    margin:
+                                        EdgeInsets.symmetric(horizontal: 12),
                                     child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Icon(Icons.add_circle_outline_outlined),
                                         SizedBox(width: 16),
-                                        Text('コミュニティを追加'),
+                                        Text(
+                                          'コミュニティを追加',
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
                                       ],
                                     ),
-                                  )
-                                ],
-                              ),
+                                  ),
+                                )
+                              ],
                             ),
                           );
                         },

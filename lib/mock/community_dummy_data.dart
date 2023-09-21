@@ -1,5 +1,72 @@
+import 'package:putone/model/community.dart';
 import 'package:putone/model/music.dart';
 import 'package:putone/model/user.dart';
+
+final String invitationAuthorize = '招待・承認制';
+final String mailAuthorize = '大学メールアドレス認証';
+
+List<Community> dummyCommunity = [
+  Community(
+    name: '理科大 音楽サークル',
+    imagePath: 'tus_ms',
+    authorize: invitationAuthorize,
+    official: false,
+  ),
+  Community(
+    name: '慶應義塾大学',
+    imagePath: 'keio',
+    authorize: mailAuthorize,
+    official: true,
+  ),
+  Community(
+    name: '法政大学 市谷キャンパス',
+    imagePath: 'hosei',
+    authorize: mailAuthorize,
+    official: true,
+  ),
+  Community(
+    name: '早稲田バドサークル',
+    imagePath: 'badminton',
+    authorize: invitationAuthorize,
+    official: false,
+  ),
+  Community(
+    name: '東京理科大学 経営学部',
+    imagePath: 'tus_ms',
+    authorize: mailAuthorize,
+    official: true,
+  ),
+  Community(
+    name: '上智大学 留学生グル',
+    imagePath: 'international',
+    authorize: invitationAuthorize,
+    official: false,
+  ),
+  Community(
+    name: '上智大学',
+    imagePath: 'sofia',
+    authorize: mailAuthorize,
+    official: true,
+  ),
+  Community(
+    name: '青山学院大学',
+    imagePath: 'aoyama',
+    authorize: mailAuthorize,
+    official: true,
+  ),
+  Community(
+    name: '明治大学',
+    imagePath: 'meiji',
+    authorize: mailAuthorize,
+    official: true,
+  ),
+  Community(
+    name: 'お茶の水女子大学',
+    imagePath: 'ochanomizu',
+    authorize: mailAuthorize,
+    official: true,
+  ),
+];
 
 List<Music> communityDummyMusicList = [
   Music(
