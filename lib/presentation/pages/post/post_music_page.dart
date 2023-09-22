@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
@@ -8,7 +9,7 @@ import 'package:putone/model/user.dart';
 import 'package:putone/utill/constant.dart';
 import 'package:blur/blur.dart';
 
-class PostMusicPage extends StatelessWidget {
+class PostMusicPage extends StatefulWidget {
   final Post post;
   final User user;
   const PostMusicPage({
@@ -16,6 +17,27 @@ class PostMusicPage extends StatelessWidget {
     required this.post,
     required this.user,
   }) : super(key: key);
+
+  @override
+  State<PostMusicPage> createState() => _PostMusicPageState();
+}
+
+class _PostMusicPageState extends State<PostMusicPage> {
+  final _audioPlayer = AudioPlayer();
+
+  @override
+  void initState() {
+    super.initState();
+    _audioPlayer.play(AssetSource(AssetsExt.musicPath(widget.post.musicPath)));
+    //_audioPlayer.setReleaseMode(ReleaseMode.loop);
+  }
+
+  @override
+  void dispose() {
+    _audioPlayer.pause();
+    _audioPlayer.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +52,7 @@ class PostMusicPage extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    AssetsExt.imagePath(post.imagePath),
+                    AssetsExt.imagePath(widget.post.imagePath),
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -47,17 +69,17 @@ class PostMusicPage extends StatelessWidget {
                 MovieIndicator(),
                 Gap(12),
                 _UserInfoHeader(
-                  user: user,
+                  user: widget.user,
                 ),
                 Gap(width * 0.25),
                 Image.asset(
-                  AssetsExt.imagePath(post.imagePath),
+                  AssetsExt.imagePath(widget.post.imagePath),
                   width: 272,
                   height: 272,
                 ),
                 Gap(24),
                 Text(
-                  post.artist,
+                  widget.post.artist,
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
@@ -66,7 +88,7 @@ class PostMusicPage extends StatelessWidget {
                 ),
                 Gap(20),
                 Text(
-                  post.name,
+                  widget.post.name,
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.white,
@@ -75,7 +97,8 @@ class PostMusicPage extends StatelessWidget {
                 ),
                 Gap(20),
                 Text(
-                  post.comment,
+                  widget.post.comment,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.white,
