@@ -4,19 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:putone/components/user_icon.dart';
-import 'package:putone/model/music.dart';
 import 'package:putone/model/user.dart';
 import 'package:putone/utill/constant.dart';
+
+import '../model/post.dart';
 
 class MusicPostCard extends StatelessWidget {
   final VoidCallback onPostTap;
   final User user;
-  final Music music;
+  final Post post;
   const MusicPostCard({
     Key? key,
     required this.onPostTap,
     required this.user,
-    required this.music,
+    required this.post,
   }) : super(key: key);
 
   @override
@@ -39,10 +40,10 @@ class MusicPostCard extends StatelessWidget {
               user: user,
             ),
             _MusicImage(
-              music: music,
+              post: post,
             ),
             _MusicPostCardFooter(
-              postTitle: music.descroption,
+              postTitle: post.description,
             ),
           ],
         ),
@@ -96,11 +97,11 @@ class _MusicPostCardHeader extends StatelessWidget {
 }
 
 class _MusicImage extends StatelessWidget {
-  final Music music;
+  final Post post;
 
   const _MusicImage({
     Key? key,
-    required this.music,
+    required this.post,
   }) : super(key: key);
 
   @override
@@ -109,43 +110,60 @@ class _MusicImage extends StatelessWidget {
       children: [
         Image.asset(
           AssetsExt.imagePath(
-            music.imagePath,
+            post.imagePath,
           ),
         ),
         Positioned(
-          bottom: 8,
-          left: 8,
-          child: ClipRect(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                sigmaX: 5.0,
-                sigmaY: 5.0,
-              ),
-              child: ColoredBox(
-                color: Colors.black.withOpacity(0.3),
-                child: Row(
-                  children: [
-                    SvgPicture.asset(
-                      AssetsExt.svgPath('music'),
-                    ),
-                    Gap(4),
-                    Text(
-                      music.name,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Gap(48),
-                    SvgPicture.asset(
-                      AssetsExt.svgPath('book_mark'),
-                    ),
-                  ],
-                ),
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Container(
+            height: 60,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color.fromARGB(0, 0, 0, 0),
+                  Color.fromARGB(120, 0, 0, 0),
+                  Color.fromARGB(180, 0, 0, 0),
+                ],
               ),
             ),
           ),
-        )
+        ),
+        Positioned(
+          bottom: 12,
+          left: 8,
+          child: Row(
+            children: [
+              SvgPicture.asset(
+                AssetsExt.svgPath('music'),
+              ),
+              Gap(4),
+              Container(
+                width: 120,
+                child: Text(
+                  post.name,
+                  softWrap: false,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              //Gap(48),
+            ],
+          ),
+        ),
+        Positioned(
+          bottom: 12,
+          right: 8,
+          child: SvgPicture.asset(
+            AssetsExt.svgPath('book_mark'),
+          ),
+        ),
       ],
     );
   }

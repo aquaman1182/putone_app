@@ -1,0 +1,241 @@
+import 'package:flutter/material.dart';
+import 'package:putone/components/community_user_list.dart';
+import 'package:putone/presentation/pages/main/community/community_select_screen.dart';
+import 'package:putone/theme/app_color_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class CommunityScreen extends StatefulWidget {
+  CommunityScreen({super.key});
+
+  @override
+  State<CommunityScreen> createState() => _CommunityScreenState();
+}
+
+class _CommunityScreenState extends State<CommunityScreen> {
+  final _filteringController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          color: AppColorTheme.dark().mainColor,
+          child: SafeArea(
+            child: Container(
+              color: AppColorTheme.dark().mainColor,
+              padding: EdgeInsets.fromLTRB(12, 6, 12, 12),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'フレンド追加',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 24,
+                          color: Colors.white,
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          'ID検索',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 6),
+                  Form(
+                    child: Container(
+                      height: 40,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(45, 0, 0, 0),
+                            spreadRadius: 0,
+                            blurRadius: 2,
+                            offset: Offset(2, 4),
+                          ),
+                        ],
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(28),
+                      ),
+                      child: TextFormField(
+                        controller: _filteringController,
+                        //textAlignVertical: TextAlignVertical.top,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.search),
+                          suffixIcon: Icon(Icons.cancel_outlined),
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+            child: Padding(
+          padding: EdgeInsets.fromLTRB(12, 4, 12, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: AppColorTheme.dark().accentColor,
+                          width: 2,
+                        ),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 6,
+                        vertical: 4,
+                      ),
+                      child: Text(
+                        '東京理科大学',
+                        style: GoogleFonts.inter(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return Container(
+                            height: 230,
+                            decoration: BoxDecoration(color: Colors.white),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(16, 18, 16, 0),
+                                  child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Text(
+                                          '所属中のコミュニティ',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: AppColorTheme.dark().gray200,
+                                          ),
+                                        ),
+                                        SizedBox(height: 12),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              '東京理科大学',
+                                              style: TextStyle(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            Icon(
+                                              Icons.check,
+                                              color: AppColorTheme.dark()
+                                                  .mainColor,
+                                              size: 24,
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 12),
+                                        Text(
+                                          '東京理科大学 経営学部',
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        SizedBox(height: 12),
+                                        Text(
+                                          '理科大 バドミントンサークル',
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ]),
+                                ),
+                                SizedBox(height: 20),
+                                Divider(
+                                  color: AppColorTheme.dark().gray200,
+                                  height: 0.2,
+                                ),
+                                SizedBox(height: 16),
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.of(context).pop();
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                CommunitySelectScreen()));
+                                  },
+                                  child: Container(
+                                    margin:
+                                        EdgeInsets.symmetric(horizontal: 12),
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Icon(Icons.add_circle_outline_outlined),
+                                        SizedBox(width: 16),
+                                        Text(
+                                          'コミュニティを追加',
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    icon: Icon(
+                      Icons.keyboard_arrow_down_outlined,
+                      size: 32,
+                    ),
+                  ),
+                  Spacer(),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.person_add_rounded,
+                      size: 32,
+                    ),
+                  ),
+                ],
+              ),
+              Expanded(child: CommunityUserList()),
+            ],
+          ),
+        ))
+      ],
+    );
+  }
+}
