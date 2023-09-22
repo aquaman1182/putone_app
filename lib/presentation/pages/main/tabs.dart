@@ -35,21 +35,24 @@ class _TabsState extends State<Tabs> {
     return Scaffold(
       body: _currentContent[_currentIndex], //_currentIndexによって表示するBodyを変更する
       bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         backgroundColor: AppColorTheme.dark().mainColor,
         fixedColor: Colors.white,
-        // showSelectedLabels: false,
-        // showUnselectedLabels: false,
         currentIndex: _currentIndex,
         iconSize: 30,
         onTap: (index) {
           _onBottomBarTapped(index);
         },
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.people), label: "Community"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: ''),
           BottomNavigationBarItem(
-              icon: Icon(Icons.supervised_user_circle_rounded),
-              label: "Profile"),
+            icon: Icon(
+              Icons.supervised_user_circle_rounded,
+            ),
+            label: '',
+          ),
         ],
         type: BottomNavigationBarType.fixed,
       ),
