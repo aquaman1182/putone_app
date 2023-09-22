@@ -4,19 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:putone/components/user_icon.dart';
-import 'package:putone/model/music.dart';
 import 'package:putone/model/user.dart';
 import 'package:putone/utill/constant.dart';
+
+import '../model/post.dart';
 
 class MusicPostCard extends StatelessWidget {
   final VoidCallback onPostTap;
   final User user;
-  final Music music;
+  final Post post;
   const MusicPostCard({
     Key? key,
     required this.onPostTap,
     required this.user,
-    required this.music,
+    required this.post,
   }) : super(key: key);
 
   @override
@@ -39,10 +40,10 @@ class MusicPostCard extends StatelessWidget {
               user: user,
             ),
             _MusicImage(
-              music: music,
+              post: post,
             ),
             _MusicPostCardFooter(
-              postTitle: music.description,
+              postTitle: post.description,
             ),
           ],
         ),
@@ -96,11 +97,11 @@ class _MusicPostCardHeader extends StatelessWidget {
 }
 
 class _MusicImage extends StatelessWidget {
-  final Music music;
+  final Post post;
 
   const _MusicImage({
     Key? key,
-    required this.music,
+    required this.post,
   }) : super(key: key);
 
   @override
@@ -109,7 +110,7 @@ class _MusicImage extends StatelessWidget {
       children: [
         Image.asset(
           AssetsExt.imagePath(
-            music.imagePath,
+            post.imagePath,
           ),
         ),
         Positioned(
@@ -130,7 +131,7 @@ class _MusicImage extends StatelessWidget {
                     ),
                     Gap(4),
                     Text(
-                      music.name,
+                      post.name,
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

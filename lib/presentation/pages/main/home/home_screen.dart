@@ -120,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {
                         return MusicPostCard(
-                          music: mockMusicList[index],
+                          post: mockPostList[index],
                           user: mockUserList[index],
                           onPostTap: () => Navigator.of(context).push(
                             MaterialPageRoute(
