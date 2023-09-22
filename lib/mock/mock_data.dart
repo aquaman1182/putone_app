@@ -53,63 +53,16 @@ List<Music> mockMusicList = [
     description: "イケボすぎて鳥肌！",
   ),
 ];
+
 List<Post> mockPostList = [
-  Post(
-    name: "", 
-    artist: "", 
-    imagePath: "", 
-    comment: "", 
-    description: ""
-  ),
-  Post(
-    name: "", 
-    artist: "", 
-    imagePath: "", 
-    comment: "", 
-    description: ""
-  ),
-  Post(
-    name: "", 
-    artist: "", 
-    imagePath: "", 
-    comment: "", 
-    description: ""
-  ),
-  Post(
-    name: "", 
-    artist: "", 
-    imagePath: "", 
-    comment: "", 
-    description: ""
-  ),
-  Post(
-    name: "", 
-    artist: "", 
-    imagePath: "", 
-    comment: "", 
-    description: ""
-  ),
-  Post(
-    name: "", 
-    artist: "", 
-    imagePath: "", 
-    comment: "", 
-    description: ""
-  ),
-  Post(
-    name: "", 
-    artist: "", 
-    imagePath: "", 
-    comment: "", 
-    description: ""
-  ),
-  Post(
-    name: "", 
-    artist: "", 
-    imagePath: "", 
-    comment: "", 
-    description: ""
-  ),
+  Post(name: "", artist: "", imagePath: "", comment: "", description: ""),
+  Post(name: "", artist: "", imagePath: "", comment: "", description: ""),
+  Post(name: "", artist: "", imagePath: "", comment: "", description: ""),
+  Post(name: "", artist: "", imagePath: "", comment: "", description: ""),
+  Post(name: "", artist: "", imagePath: "", comment: "", description: ""),
+  Post(name: "", artist: "", imagePath: "", comment: "", description: ""),
+  Post(name: "", artist: "", imagePath: "", comment: "", description: ""),
+  Post(name: "", artist: "", imagePath: "", comment: "", description: ""),
 ];
 
 List<User> mockUserList = [
