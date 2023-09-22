@@ -4,6 +4,7 @@ class Post {
   final String imagePath;
   final String comment;
   final String description;
+  final String musicPath;
 
   Post({
     required this.name,
@@ -11,5 +12,6 @@ class Post {
     required this.imagePath,
     required this.comment,
     required this.description,
+    required this.musicPath,
   });
 }

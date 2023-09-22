@@ -3,7 +3,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.4 <3.0.0'
+  sdk: ">=2.19.4 <3.0.0"
 
 dependencies:
   flutter:
@@ -30,6 +30,7 @@ dependencies:
   # Other
   gap:
   blur: ^3.1.0
+  audioplayers: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +52,6 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
-    #- assets/music/
+    - assets/audios/
 
   uses-material-design: true

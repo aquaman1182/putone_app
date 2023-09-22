@@ -14,6 +14,6 @@ extension AssetsExt on String {
   }
 
   static String musicPath(String name) {
-    return 'assets/music/$name.MP3';
+    return 'audios/$name.MP3';
   }
 }

@@ -7,6 +7,9 @@ import 'package:putone/model/music.dart';
 import 'package:putone/model/user.dart';
 import 'package:putone/utill/constant.dart';
 import 'package:blur/blur.dart';
+import 'package:audioplayers/audioplayers.dart';
+// import 'package:just_audio/just_audio.dart';
+// import 'package:audio_session/audio_session.dart';
 
 class StoryMusicPage extends StatefulWidget {
   final int index;
@@ -24,13 +27,24 @@ class StoryMusicPage extends StatefulWidget {
 }
 
 class _StoryMusicPageState extends State<StoryMusicPage> {
-  @override
-  void initState() {
-    super.initState();
-  }
+  // final _audioPlayer = AudioPlayer();
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   //_audioPlayer.setReleaseMode(ReleaseMode.loop);
+  // }
+
+  // @override
+  // void dispose() {
+  //   _audioPlayer.pause();
+  //   _audioPlayer.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
+    // _audioPlayer.play(AssetSource(AssetsExt.musicPath(widget.music.musicPath)));
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
