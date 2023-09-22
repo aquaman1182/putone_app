@@ -126,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             MaterialPageRoute(
                               builder: (context) {
                                 return PostMusicPage(
-                                  music: mockMusicList[index],
+                                  post: mockPostList[index],
                                   user: mockUserList[index],
                                 );
                               },

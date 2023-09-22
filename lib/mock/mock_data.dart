@@ -1,6 +1,8 @@
 import 'package:putone/model/music.dart';
 import 'package:putone/model/user.dart';
 
+import '../model/post.dart';
+
 List<Music> mockMusicList = [
   Music(
     name: "水平線",
@@ -49,6 +51,64 @@ List<Music> mockMusicList = [
     artist: "キタニタツヤ",
     imagePath: "sample8",
     description: "イケボすぎて鳥肌！",
+  ),
+];
+List<Post> mockPostList = [
+  Post(
+    name: "", 
+    artist: "", 
+    imagePath: "", 
+    comment: "", 
+    description: ""
+  ),
+  Post(
+    name: "", 
+    artist: "", 
+    imagePath: "", 
+    comment: "", 
+    description: ""
+  ),
+  Post(
+    name: "", 
+    artist: "", 
+    imagePath: "", 
+    comment: "", 
+    description: ""
+  ),
+  Post(
+    name: "", 
+    artist: "", 
+    imagePath: "", 
+    comment: "", 
+    description: ""
+  ),
+  Post(
+    name: "", 
+    artist: "", 
+    imagePath: "", 
+    comment: "", 
+    description: ""
+  ),
+  Post(
+    name: "", 
+    artist: "", 
+    imagePath: "", 
+    comment: "", 
+    description: ""
+  ),
+  Post(
+    name: "", 
+    artist: "", 
+    imagePath: "", 
+    comment: "", 
+    description: ""
+  ),
+  Post(
+    name: "", 
+    artist: "", 
+    imagePath: "", 
+    comment: "", 
+    description: ""
   ),
 ];
 

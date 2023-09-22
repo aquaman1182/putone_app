@@ -3,17 +3,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:putone/components/movie_indicator.dart';
 import 'package:putone/components/user_icon.dart';
-import 'package:putone/model/music.dart';
+import 'package:putone/model/post.dart';
 import 'package:putone/model/user.dart';
 import 'package:putone/utill/constant.dart';
 import 'package:blur/blur.dart';
 
 class PostMusicPage extends StatelessWidget {
-  final Music music;
+  final Post post;
   final User user;
   const PostMusicPage({
     Key? key,
-    required this.music,
+    required this.post,
     required this.user,
   }) : super(key: key);
 
@@ -30,7 +30,7 @@ class PostMusicPage extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    AssetsExt.imagePath(music.imagePath),
+                    AssetsExt.imagePath(post.imagePath),
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -51,13 +51,13 @@ class PostMusicPage extends StatelessWidget {
                 ),
                 Gap(width * 0.25),
                 Image.asset(
-                  AssetsExt.imagePath(music.imagePath),
+                  AssetsExt.imagePath(post.imagePath),
                   width: 272,
                   height: 272,
                 ),
                 Gap(24),
                 Text(
-                  music.artist,
+                  post.artist,
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
@@ -66,7 +66,7 @@ class PostMusicPage extends StatelessWidget {
                 ),
                 Gap(20),
                 Text(
-                  music.name,
+                  post.name,
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.white,
@@ -75,7 +75,7 @@ class PostMusicPage extends StatelessWidget {
                 ),
                 Gap(20),
                 Text(
-                  "message",
+                  post.comment,
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.white,

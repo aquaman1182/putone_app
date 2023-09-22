@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:putone/components/community_card.dart';
 import 'package:putone/mock/community_dummy_data.dart';
 import 'package:putone/theme/app_color_theme.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CommunitySelectScreen extends StatefulWidget {
   CommunitySelectScreen({super.key});
