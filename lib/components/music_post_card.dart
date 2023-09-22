@@ -114,39 +114,56 @@ class _MusicImage extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 8,
-          left: 8,
-          child: ClipRect(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                sigmaX: 5.0,
-                sigmaY: 5.0,
-              ),
-              child: ColoredBox(
-                color: Colors.black.withOpacity(0.3),
-                child: Row(
-                  children: [
-                    SvgPicture.asset(
-                      AssetsExt.svgPath('music'),
-                    ),
-                    Gap(4),
-                    Text(
-                      post.name,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Gap(48),
-                    SvgPicture.asset(
-                      AssetsExt.svgPath('book_mark'),
-                    ),
-                  ],
-                ),
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Container(
+            height: 60,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color.fromARGB(0, 0, 0, 0),
+                  Color.fromARGB(120, 0, 0, 0),
+                  Color.fromARGB(180, 0, 0, 0),
+                ],
               ),
             ),
           ),
-        )
+        ),
+        Positioned(
+          bottom: 12,
+          left: 8,
+          child: Row(
+            children: [
+              SvgPicture.asset(
+                AssetsExt.svgPath('music'),
+              ),
+              Gap(4),
+              Container(
+                width: 120,
+                child: Text(
+                  post.name,
+                  softWrap: false,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              //Gap(48),
+            ],
+          ),
+        ),
+        Positioned(
+          bottom: 12,
+          right: 8,
+          child: SvgPicture.asset(
+            AssetsExt.svgPath('book_mark'),
+          ),
+        ),
       ],
     );
   }
