@@ -30,9 +30,9 @@ class UserCard extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: AppColorTheme.dark().gray300,
-            spreadRadius: 1,
-            blurRadius: 5,
+            color: Color.fromARGB(255, 164, 164, 164),
+            spreadRadius: 0,
+            blurRadius: 3,
             offset: Offset(2, 4),
           ),
         ],

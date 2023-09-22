@@ -57,8 +57,6 @@ class _CommunityScreenState extends State<CommunityScreen> {
                   Form(
                     child: Container(
                       height: 40,
-
-                      //alignment: Alignment.center,
                       decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
@@ -79,15 +77,6 @@ class _CommunityScreenState extends State<CommunityScreen> {
                           suffixIcon: Icon(Icons.cancel_outlined),
                           border: InputBorder.none,
                         ),
-                        // onChanged: ((value) {
-                        //   _filteringController.selection =
-                        //       TextSelection.fromPosition(
-                        //     TextPosition(
-                        //       offset: 0,
-                        //     ),
-                        //   );
-                        // }
-                        // ),
                       ),
                     ),
                   ),
